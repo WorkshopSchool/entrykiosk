@@ -6,15 +6,81 @@
 	html, body { height:100%; margin:0; padding:0; }
 	div { position:fixed; width:50%; height:50%; }
 	#NW { top:0;   left:0;   background:#004225; background-image: url("http://www.shade.x10host.com/wslogo_cropped.png"); background-size:85%; background-repeat:no-repeat; background-position:center; }
-	#NE { top:0;   left:50%; background:#004225;    }
+	#NE { top:0;   left:50%; background:#004225;   }
 	#SW { top:50%; left:0;   background:#004225;   }
 	#SE { top:50%; left:50%; background:#004225;   } 
+	
+	<div style="width:400px;height:400px;text-align:center;margin:auto;" ><object width="400" height="400" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" 
+	codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"> <param name="flashvars" value="offsite=true&amp;lang=en-us&amp;page_show_url=%2Fshow&amp;page_show_back_url=%2F" /> 
+	<param name="allowFullScreen" value="false" /> <param name="src" value="https://www.flickr.com/apps/slideshow/show.swf?v=71649" /> 
+	<embed width="400" height="400" type="application/x-shockwave-flash" src="https://www.flickr.com/apps/slideshow/show.swf?v=71649" flashvars="offsite=true&amp;lang=en-us&amp;page_show_url=%2Fshow&amp;page_show_back_url=%2F" allowFullScreen="false" /> </object><br />
+	<small>Created with <a href="http://www.flickrslideshow.com">flickr slideshow</a>.</small></div>
+	
+	ul {
+    width: 70%;
+    margin: auto;
+	}
+	
+	 div {
+  /* ... */
+  padding:1em;
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+	} 
 	</style>
+	
+	<script type="text/javascript">
+tday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+function GetClock(){
+var d=new Date();
+var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getYear(),nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+
+     if(nhour==0){ap=" AM";nhour=12;}
+else if(nhour<12){ap=" AM";}
+else if(nhour==12){ap=" PM";}
+else if(nhour>12){ap=" PM";nhour-=12;}
+
+if(nyear<1000) nyear+=1900;
+if(nmin<=9) nmin="0"+nmin;
+if(nsec<=9) nsec="0"+nsec;
+
+document.getElementById('NE').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" <br>"+nhour+":"+nmin+":"+nsec+ap+"";
+}
+
+window.onload=function(){
+GetClock();
+setInterval(GetClock,1000);
+}
+</script>
 </head>
-<body>
-	<div id="NW"></div>
-	<div id="NE"></div>
-	<div id="SE"></div>
-	<div id="SW"></div>
+<body style="color:#8C8C8C;font-size:65px">
+	<div id="NW" ></div>
+	<div id="NE" style="color:#8C8C8C;font-size:66px" align="center"></div>
+	<div id="SE" >
+	<p align="center" style="font-size:35px;">
+	 Quote Of The Week:
+		<br>
+		 "Success isn't about how your life looks to others. It's about how it feels to you. We realized that being successful isn't about being impressive, it's about being inspired. 		       That's what it means to be true to yourself."
+		<br>
+		-Michelle Obama 
+			
+	</p>
+	
+	
+	</div>
+	<div id="SW">
+	<p align="center">
+	 Announcments:
+		<ul style="font-size:40px">
+			 <li>Attendance Madness: Get To Class!!!</li> 
+			<!-- <li>Test</li> -->
+			<!-- <li>Test</li> -->
+			<!-- <li>Test</li> -->
+		</ul>
+	</p>
+	</div>
 </body>
  </html>
